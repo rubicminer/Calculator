@@ -10,10 +10,7 @@ Calculation_Part_Shown = Label(window, textvariable=Calculation_Part_Shown_Text,
 Calculation_Part_Shown_Text.set("")
 Calculation_Part_Shown.grid(columnspan=5, sticky=EW)
 Calculation_Part_Shown.configure(background="#c2c8cf")
-Q = 0
-U = 0
-I = 0
-T = 0
+Q, U, I, T = 0, 0, 0, 0
 
 
 def Button_Click(num):
@@ -56,130 +53,56 @@ def Button_Click(num):
 
         b = a[(len(a)) - 1]
         if b == "+":
-            if num == "+":
-                return
-            elif num == "-":
-                return
-            elif num == "*":
-                return
-            elif num == "/":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == ")" or num == "^":
                 return
             elif num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "^":
-                return
         elif b == "-":
-            if num == "-":
-                return
-            elif num == "+":
-                return
-            elif num == "*":
-                return
-            elif num == "/":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == ")" or num == "^":
                 return
             elif num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "^":
-                return
         elif b == "*":
-            if num == "*":
-                return
-            elif num == "-":
-                return
-            elif num == "+":
-                return
-            elif num == "/":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == ")" or num == "^":
                 return
             elif num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "^":
-                return
         elif b == "/":
-            if num == "/":
-                return
-            elif num == "-":
-                return
-            elif num == "*":
-                return
-            elif num == "+":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == ")" or num == "^":
                 return
             elif num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "^":
-                return
         elif b == ".":
-            if num == "-":
-                return
-            elif num == "+":
-                return
-            elif num == "*":
-                return
-            elif num == "/":
-                return
-            elif num == ".":
-                return
-            elif num == ")":
-                return
-            elif num == "(":
-                return
-            elif num == "^":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == "(" or num == ")" or num == "^" or num == ".":
                 return
         elif b == "(":
+            if num == ")" or num == "/" or num == "*" or num == "^":
+                return
             if num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "/":
-                return
-            elif num == "*":
-                return
             elif num == "(":
                 if Parentheses_amount >= 5:
                     return
-            elif num == "^":
-                return
         elif b == ")":
-            if num == ".":
+            if num == "(" or num == "√" or num == 1 or num == 2 or num == 3 or num == 4 or num == 5 or num == 6 or \
+                    num == 7 or num == 8 or num == 9 or num == 0:
+                num = f"*{num}"
+            elif num == ".":
                 num = "0."
-            elif num == "(":
-                num = "*("
             elif num == ")":
                 if Parentheses_amount <= 0:
                     return
             elif num == "^":
                 return
-            elif num == "√":
-                num = "*√"
-            elif num == 1 or num == 2 or num == 3 or num == 4 or num == 5 or num == 6 or num == 7 or num == 8 or num == \
-                    9 or num == 0:
-                num = "*%d" % num
         elif b == "^":
-            if num == "+":
-                return
-            elif num == "-":
-                return
-            elif num == "*":
-                return
-            elif num == "/":
+            if num == "+" or num == "-" or num == "*" or num == "/" or num == ")" or num == "^":
                 return
             elif num == ".":
                 num = "0."
-            elif num == ")":
-                return
-            elif num == "^":
-                return
         elif b == "1" or b == "2" or b == "3" or b == "4" or b == "5" or b == "6" or b == "7" or b == "8" or b == "9" \
                 or b == "0":
-            if num == "(":
-                num = "*("
+            if num == "(" or num == "√":
+                num = f"*{num}"
             elif num == ")":
                 if Parentheses_amount <= 0:
                     return
