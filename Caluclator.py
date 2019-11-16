@@ -3,6 +3,7 @@ import tkinter.messagebox
 
 window = Tk()
 window.title("Calculator")
+window.resizable(False, False)
 
 Calculation_Part_Shown_Update = ""
 Calculation_Part_Shown_Text = StringVar()
